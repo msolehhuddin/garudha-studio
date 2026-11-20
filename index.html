@@ -66,10 +66,10 @@
 <label><span>Expected guests (optional)</span><input type="number" name="guests" min="1" step="1"></label>
 <div class="wide"><label><span>Venue or city (optional)</span><input type="text" name="venue" maxlength="180"></label></div>
 <label class="wide"><span>Event brief</span><textarea name="brief" required rows="4" maxlength="1500" aria-describedby="brief-tip"></textarea><small id="brief-tip">Include the event type and the support you need.</small></label>
-</div><button>Send Enquiry</button><p>Review and send your enquiry in your email app.</p></form>
+</div><button type="submit">Send enquiry</button><p>Review and send your enquiry in your email app.</p><div class="fallback" id="fallback" hidden><p>Nothing opened? Send it another way:</p><a id="gmail" target="_blank" rel="noopener">Open in Gmail</a><button type="button" id="copy">Copy message</button><span id="copied" role="status"></span></div></form>
 </div></section>
 
 <footer><div class="wrap"><div class="wordmark" aria-hidden="true">GARUDHA STUDIO</div>
-<div class="legal"><span>© <span id="year">2022</span> <span>Garudha Studio. All rights reserved.</span></span><a href="#top">Back to top</a></div></div></footer>
+<div class="legal"><span>© <span id="year">2022</span> <span>Garudha Studio. All rights reserved.</span></span><a href="#home" id="backtop">Back to top</a></div></div></footer>
 
 <script src="assets/js/main.js"></script></body></html>

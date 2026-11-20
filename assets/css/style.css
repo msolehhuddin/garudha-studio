@@ -154,3 +154,5 @@ footer{background:#070506;border-top:1px solid var(--line)}
 html[lang=ms] .hero h1{font-size:clamp(2.4rem,5.6vw,5.4rem)}
 html[lang=ms] .svc-head h2{font-size:clamp(2.1rem,3.8vw,3.9rem)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.fallback{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid #cfc6bf}.fallback[hidden]{display:none}.fallback p{margin:0;font-size:.88rem}.fallback a,.fallback button{padding:9px 16px;border-radius:999px;border:1px solid #b02f24;color:#b02f24;background:transparent;font:600 .88rem inherit;cursor:pointer;text-decoration:none}.fallback a:hover,.fallback button:hover{background:#b02f24;color:#fff}.fallback span{font-size:.85rem}

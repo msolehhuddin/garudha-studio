@@ -9,7 +9,7 @@ const translations = {"About Us":"Tentang Kami","Services":"Perkhidmatan","Conta
 "Event Planner":"Perancangan Acara","From an early idea to a plan ready for the crew.":"Daripada idea awal hingga terhasilnya pelan yang boleh digunakan oleh kru.","Discover the idea":"Kenal pasti idea dan keutamaan","Identify the occasion, guest profile, priorities and spending limit.":"Fahami tujuan majlis, profil tetamu, keutamaan klien dan had perbelanjaan.","Shape the concept":"Bentuk konsep acara","Compare venue options and propose a theme, guest journey and programme format.":"Bandingkan pilihan lokasi dan cadangkan tema, aliran pergerakan tetamu serta format program.","Develop the blueprint":"Perincikan pelan acara","Build the floor plan, supplier brief, budget and planning calendar.":"Sediakan pelan lantai, panduan untuk pembekal, bajet dan jadual persediaan.","Hand over the plan":"Serahkan pelan kepada pasukan","Walk the delivery team through the run sheet, decision points and contingency options before event day.":"Terangkan jadual acara, perkara yang memerlukan keputusan dan pilihan pelan sandaran kepada pasukan pelaksana sebelum hari acara.","Review the outcome":"Nilai hasil acara","After the event, compare client feedback with the original goals and capture ideas for the next edition.":"Selepas acara, bandingkan maklum balas klien dengan matlamat asal dan catat idea untuk penganjuran seterusnya.","A concept proposal, cost estimate, draft programme, layout and planning calendar.":"Kertas cadangan konsep, anggaran kos, draf atur cara, cadangan susun atur dan jadual persediaan.",
 "Event Coordinator":"Penyelarasan Acara","From taking over the brief to the final sign-off.":"Daripada pengambilalihan persediaan hingga pengesahan akhir bersama penganjur.","Take the handover":"Ambil alih maklumat acara","Collect existing bookings, vendor contacts and the latest programme from the organiser.":"Dapatkan butiran tempahan, maklumat hubungan pembekal dan atur cara terkini daripada penganjur.","Confirm the details":"Sahkan butiran operasi","Check access times, deliveries, guest arrangements and outstanding decisions with each lead.":"Semak waktu akses, penghantaran, urusan tetamu dan keputusan yang masih diperlukan bersama setiap ketua pasukan.","Brief & rehearse":"Adakan taklimat dan raptai","Issue the final run sheet, assign cues and rehearse the critical transitions.":"Edarkan jadual akhir, tetapkan pemberi isyarat dan jalankan raptai bagi peralihan penting antara segmen.","Coordinate the day":"Selaraskan perjalanan acara","Call vendors and speakers into position, track timing and relay changes to everyone affected.":"Pastikan pembekal dan penceramah bersedia pada waktunya, pantau jadual dan maklumkan perubahan kepada semua pihak terlibat.","Wrap the site":"Selesaikan urusan di lokasi","Confirm guest departure, vendor collection and venue handover, then report outstanding items to the organiser.":"Sahkan tetamu telah beredar, peralatan pembekal telah diambil dan lokasi telah diserahkan semula. Laporkan perkara tertunggak kepada penganjur.","An event-day run sheet, operations contact list and crew assignments.":"Jadual terperinci hari acara, senarai hubungan operasi dan pembahagian tugas kru.",
 "69-1, Jalan PUJ 3/9,":"69-1, Jalan PUJ 3/9,","Taman Puncak Jalil, Pusat Bandar Putra Permai,":"Taman Puncak Jalil, Pusat Bandar Putra Permai,","43300 Seri Kembangan, Selangor.":"43300 Seri Kembangan, Selangor.","View on Google Maps":"Lihat di Google Maps",
-"Contact Our Team":"Hubungi Pasukan Kami","General Enquiries":"Pertanyaan Umum","Studio Address":"Alamat Studio","Tell us about your event":"Ceritakan tentang acara anda","Your name":"Nama anda","Company (optional)":"Syarikat (pilihan)","Email address":"Alamat e-mel","Service of interest":"Perkhidmatan yang diperlukan","Choose a service":"Pilih perkhidmatan","Help me choose":"Bantu saya memilih","Event date (optional)":"Tarikh acara (pilihan)","Expected guests (optional)":"Anggaran tetamu (pilihan)","Venue or city (optional)":"Lokasi atau bandar (pilihan)","Event brief":"Ringkasan acara","Include the event type and the support you need.":"Nyatakan jenis acara dan bantuan yang anda perlukan.","Send Enquiry":"Hantar Pertanyaan","Review and send your enquiry in your email app.":"Semak dan hantar pertanyaan melalui aplikasi e-mel anda."};
+"Contact Our Team":"Hubungi Pasukan Kami","General Enquiries":"Pertanyaan Umum","Studio Address":"Alamat Studio","Tell us about your event":"Ceritakan tentang acara anda","Your name":"Nama anda","Company (optional)":"Syarikat (pilihan)","Email address":"Alamat e-mel","Service of interest":"Perkhidmatan yang diperlukan","Choose a service":"Pilih perkhidmatan","Help me choose":"Bantu saya memilih","Event date (optional)":"Tarikh acara (pilihan)","Expected guests (optional)":"Anggaran tetamu (pilihan)","Venue or city (optional)":"Lokasi atau bandar (pilihan)","Event brief":"Ringkasan acara","Include the event type and the support you need.":"Nyatakan jenis acara dan bantuan yang anda perlukan.","Send enquiry":"Hantar pertanyaan","Review and send your enquiry in your email app.":"Semak dan hantar pertanyaan melalui aplikasi e-mel anda."};
 const attrs = {en:{menu:"Menu",lang:"Select language",nav:"Main navigation",skip:"Skip to content",title:"GARUDHA STUDIO — Event & Concert Management",desc:"Garudha Studio is an event and concert management company based in Seri Kembangan, Selangor, Malaysia. Event management, concert production, planning and on-site coordination since 2016.",hero:"Concert stage with red lighting and a sound engineer at the mixing desk",band:"Three crew members wearing headsets watching a stage"},
  ms:{menu:"Menu",lang:"Pilih bahasa",nav:"Navigasi utama",skip:"Langkau ke kandungan",title:"GARUDHA STUDIO — Pengurusan Acara dan Konsert",desc:"Garudha Studio ialah syarikat pengurusan acara dan konsert yang berpangkalan di Seri Kembangan, Selangor, Malaysia. Pengurusan acara, produksi konsert, perancangan dan penyelarasan di lokasi sejak 2016.",hero:"Pentas konsert berlampu merah dengan jurutera bunyi di meja campuran",band:"Tiga ahli kru berpakaian hitam dengan fon kepala menonton pentas"}};
 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -37,21 +37,37 @@ function selectLanguage(code){
 }
 langButtons.forEach(b=>b.addEventListener('click',()=>{selectLanguage(b.dataset.lang);try{localStorage.setItem('garudha-language',b.dataset.lang)}catch{}}));
 let initial='en';try{initial=localStorage.getItem('garudha-language')||'en'}catch{}selectLanguage(initial);
-document.getElementById('year').textContent=new Date().getFullYear();
 
 const header=document.querySelector('.site-header'),menuBtn=document.querySelector('.menu-btn');
 const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>24);onScroll();addEventListener('scroll',onScroll,{passive:true});
 menuBtn.addEventListener('click',()=>{const o=header.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(o))});
 document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{header.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
 
-document.getElementById("enquiry").addEventListener("submit",function(event){
+document.getElementById("backtop").addEventListener("click",e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})});
+
+const form=document.getElementById("enquiry"),fallback=document.getElementById("fallback"),copied=document.getElementById("copied");
+let draft={to:"info@garudhastudio.com",subject:"",body:""};
+form.addEventListener("submit",function(event){
  event.preventDefault();
  const data=new FormData(this);
  const service=this.elements.service.selectedOptions[0].textContent;
  const lines=Array.from(this.querySelectorAll("[name]")).flatMap(control=>{
    const value=control.name==="service"?service:String(data.get(control.name)||"").trim();
-   return value?[control.closest("label").querySelector("span").textContent+" — "+value]:[];
+   const label=control.closest("label");
+   const text=label&&label.querySelector("span")?label.querySelector("span").textContent:control.name;
+   return value?[text+" — "+value]:[];
  });
- const subject=(document.documentElement.lang==="ms"?"Pertanyaan acara":"Event enquiry")+" — "+service;
- window.location.href="mailto:info@garudhastudio.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\r\n"));
+ draft.subject=(document.documentElement.lang==="ms"?"Pertanyaan acara":"Event enquiry")+" — "+service;
+ draft.body=lines.join("\r\n");
+ const q="subject="+encodeURIComponent(draft.subject)+"&body="+encodeURIComponent(draft.body);
+ document.getElementById("gmail").href="https://mail.google.com/mail/?view=cm&fs=1&to="+draft.to+"&su="+encodeURIComponent(draft.subject)+"&body="+encodeURIComponent(draft.body);
+ fallback.hidden=false;copied.textContent="";
+ const a=document.createElement("a");a.href="mailto:"+draft.to+"?"+q;document.body.appendChild(a);a.click();a.remove();
+});
+document.getElementById("copy").addEventListener("click",async()=>{
+ const text="To: "+draft.to+"\r\nSubject: "+draft.subject+"\r\n\r\n"+draft.body;
+ try{await navigator.clipboard.writeText(text);copied.textContent="Copied ✓"}catch{
+  const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();
+  try{document.execCommand("copy");copied.textContent="Copied ✓"}catch{copied.textContent="Copy failed"}t.remove();
+ }
 });
